@@ -32,7 +32,7 @@ export const experience: ExperienceItem[] = [
     org: 'CHPS Lab',
     years: '2025/26',
     scope: 'multimodal wildfire detection on UAV hardware',
-    href: 'https://www.ucdavis.edu/',
+    href: 'https://www.cphslab.com/',
     logo: '/logos/ucdavis.png',
     logoAlt: 'UC Davis logo',
   },
