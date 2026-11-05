@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TimelineRow from '../components/TimelineRow.astro';
+import ProjectRow from '../components/ProjectRow.astro';
+import {
+  site,
+  experience,
+  education,
+  projects,
+  links,
+  emailParts,
+} from '../data/site';
+---
+
+<Layout>
+  <main
+    class="mx-auto flex min-h-screen max-w-4xl flex-col justify-center p-8"
+  >
+    <header>
+      <h1 class="text-2xl font-bold leading-normal">{site.name}</h1>
+      <p class="mt-1">{site.role}</p>
+      <p class="mt-1 text-sm text-[rgb(0_0_0_/_0.6)]">{site.support}</p>
+    </header>
+
+    <section class="mt-4" aria-labelledby="experience-heading">
+      <h2 id="experience-heading" class="text-lg font-bold">Experience</h2>
+      <div class="mt-1 flex flex-col gap-1">
+        {
+          experience.map((item, i) => (
+            <TimelineRow
+              name={item.org}
+              years={item.years}
+              detail={item.scope}
+              href={item.href}
+              logo={item.logo}
+              logoAlt={item.logoAlt}
+              showSpine={i < experience.length - 1}
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mt-4" aria-labelledby="education-heading">
+      <h2 id="education-heading" class="text-lg font-bold">Education</h2>
+      <div class="mt-1 flex flex-col gap-1">
+        {
+          education.map((item, i) => (
+            <TimelineRow
+              name={item.school}
+              years={item.years}
+              detail={item.line}
+              href={item.href}
+              logo={item.logo}
+              logoAlt={item.logoAlt}
+              showSpine={i < education.length - 1}
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mt-4" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="text-lg font-bold">Projects</h2>
+      <div class="mt-1 flex flex-col gap-1">
+        {
+          projects.map((item) => (
+            <ProjectRow name={item.name} blurb={item.blurb} href={item.href} />
+          ))
+        }
+      </div>
+    </section>
+
+    <footer class="mt-4 text-sm text-[rgb(0_0_0_/_0.5)]">
+      <hr class="mb-2 border-0 border-t border-black/20" />
+      <nav aria-label="Contact" class="flex flex-wrap gap-x-1">
+        {
+          links.map((link, i) => (
+            <>
+              {link.kind === 'email' ? (
+                <a
+                  href="#"
+                  class="js-email transition-colors duration-150 hover:text-black hover:no-underline"
+                  data-user={emailParts.user}
+                  data-domain={emailParts.domain}
+                >
+                  [{link.label}]
+                </a>
+              ) : (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="transition-colors duration-150 hover:text-black hover:no-underline"
+                  data-astro-prefetch
+                >
+                  [{link.label}]
+                </a>
+              )}
+              {i < links.length - 1 && <span aria-hidden="true"> / </span>}
+            </>
+          ))
+        }
+      </nav>
+    </footer>
+  </main>
+
+  <script is:inline>
+    document.querySelectorAll('a.js-email').forEach((el) => {
+      const user = el.getAttribute('data-user');
+      const domain = el.getAttribute('data-domain');
+      if (!user || !domain) return;
+      const href = 'mai' + 'lto:' + user + '@' + domain;
+      el.setAttribute('href', href);
+      el.addEventListener('click', (event) => {
+        if (el.getAttribute('href') === '#') {
+          event.preventDefault();
+          window.location.href = href;
+        }
+      });
+    });
+  </script>
+</Layout>
