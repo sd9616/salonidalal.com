@@ -10,7 +10,7 @@ export default defineConfig({
   site: isGitHubPages
     ? 'https://sd9616.github.io'
     : 'https://salonidalal.com',
-  base: isGitHubPages ? '/salonidalal.com' : '/',
+  base: isGitHubPages ? '/salonidalal.com/' : '/',
   prefetch: true,
   vite: {
     plugins: [tailwindcss()],
