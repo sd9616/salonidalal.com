@@ -18,76 +18,28 @@
 
 @theme {
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --color-fg: #000000;
-  --color-bg: #ffffff;
-}
-
-:root {
-  --font-sans-mono: "JetBrains Mono", ui-monospace, monospace;
-  --text-name: 1.5rem;
-  --text-section: 1.125rem;
-  --text-body: 1rem;
-  --text-meta: 0.875rem;
-  --leading: 1.5;
-  --weight-regular: 400;
-  --weight-bold: 700;
-  --bg: #ffffff;
-  --fg: #000000;
-  --fg-60: rgb(0 0 0 / 0.6);
-  --fg-50: rgb(0 0 0 / 0.5);
-  --fg-40: rgb(0 0 0 / 0.4);
-  --page-pad: 2rem;
-  --max-width: 56rem;
-  --gap-row: 0.5rem;
-  --section-gap: 1rem;
-  --list-gap: 0.25rem;
-  --logo: 1.5rem;
-  --ease-vt: cubic-bezier(0.76, 0, 0.24, 1);
-  --dur-vt: 180ms;
-  --dur-hover: 150ms;
 }
 
 html {
-  background: var(--bg);
-  color: var(--fg);
+  background: #ffffff;
+  color: #000000;
 }
 
 body {
   margin: 0;
-  font-family: var(--font-sans-mono);
-  font-size: var(--text-body);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading);
   -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:focus-visible {
-  outline: 1px solid var(--fg);
-  outline-offset: 2px;
 }
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: var(--dur-vt);
-  animation-timing-function: var(--ease-vt);
+  animation-duration: 180ms;
+  animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
     animation: none !important;
-  }
-
-  * {
-    transition: none !important;
   }
 }

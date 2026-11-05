@@ -23,31 +23,31 @@ export const experience: ExperienceItem[] = [
     years: '2026',
     scope: 'self-improving agentic systems, eval harnesses, production pipelines',
     href: 'https://www.getcruise.com/',
-    logo: '/logos/cruise.svg',
-    logoAlt: 'Cruise',
+    logo: '/logos/cruise.png',
+    logoAlt: 'Cruise logo',
   },
   {
     org: 'Cyber-Human-Physical Systems (CHPS) Lab, UC Davis',
     years: '2025/26',
     scope: 'multimodal wildfire detection on UAV hardware (YOLO11)',
     href: 'https://www.ucdavis.edu/',
-    logo: '/logos/ucdavis.svg',
-    logoAlt: 'UC Davis',
+    logo: '/logos/ucdavis.png',
+    logoAlt: 'UC Davis logo',
   },
   {
     org: 'Anoki AI',
     years: '2024',
     scope: 'GenAI data pipelines & multimodal prompt systems for ad generation',
-    logo: '/logos/anoki.svg',
-    logoAlt: 'Anoki AI',
+    logo: '/logos/anoki.png',
+    logoAlt: 'Anoki AI logo',
   },
   {
     org: 'Dee Lab, Rice University',
     years: '2023/25',
     scope: 'PaleoIgnition paleoclimate tools; COVID × weather ARIMA modeling',
     href: 'https://www.rice.edu/',
-    logo: '/logos/rice.svg',
-    logoAlt: 'Rice University',
+    logo: '/logos/rice.png',
+    logoAlt: 'Rice University logo',
   },
 ];
 
@@ -66,16 +66,16 @@ export const education: EducationItem[] = [
     years: '2025/27',
     line: 'MS Computer Science (AI/ML)',
     href: 'https://www.ucdavis.edu/',
-    logo: '/logos/ucdavis.svg',
-    logoAlt: 'UC Davis',
+    logo: '/logos/ucdavis.png',
+    logoAlt: 'UC Davis logo',
   },
   {
     school: 'Rice University',
     years: '2021/25',
     line: 'BS Computer Science',
     href: 'https://www.rice.edu/',
-    logo: '/logos/rice.svg',
-    logoAlt: 'Rice University',
+    logo: '/logos/rice.png',
+    logoAlt: 'Rice University logo',
   },
 ];
 
@@ -100,7 +100,6 @@ export const projects: ProjectItem[] = [
   },
 ];
 
-/** Email parts kept separate for markup obfuscation */
 export const emailParts = {
   user: 'saloni10.dalal',
   domain: 'gmail.com',
