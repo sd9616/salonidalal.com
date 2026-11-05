@@ -1,6 +1,6 @@
 export const site = {
   name: 'Saloni Dalal',
-  role: 'Machine learning engineer & researcher',
+  role: 'Machine learning engineer & researcher.',
   support:
     'Agentic systems, multimodal detection, and applied GenAI — building tools that turn research into working pipelines.',
   url: 'https://salonidalal.com',
@@ -17,19 +17,20 @@ export type ExperienceItem = {
   logoAlt: string;
 };
 
+/** Short org labels — Jack-style rows need names that fit on one line */
 export const experience: ExperienceItem[] = [
   {
-    org: 'General Motors — Cruise Automation',
+    org: 'Cruise',
     years: '2026',
-    scope: 'self-improving agentic systems, eval harnesses, production pipelines',
+    scope: 'self-improving agentic systems, eval harnesses',
     href: 'https://www.getcruise.com/',
     logo: '/logos/cruise.png',
     logoAlt: 'Cruise logo',
   },
   {
-    org: 'Cyber-Human-Physical Systems (CHPS) Lab, UC Davis',
+    org: 'CHPS Lab',
     years: '2025/26',
-    scope: 'multimodal wildfire detection on UAV hardware (YOLO11)',
+    scope: 'multimodal wildfire detection on UAV hardware',
     href: 'https://www.ucdavis.edu/',
     logo: '/logos/ucdavis.png',
     logoAlt: 'UC Davis logo',
@@ -37,14 +38,14 @@ export const experience: ExperienceItem[] = [
   {
     org: 'Anoki AI',
     years: '2024',
-    scope: 'GenAI data pipelines & multimodal prompt systems for ad generation',
+    scope: 'GenAI data pipelines & multimodal prompt systems',
     logo: '/logos/anoki.png',
     logoAlt: 'Anoki AI logo',
   },
   {
-    org: 'Dee Lab, Rice University',
+    org: 'Dee Lab',
     years: '2023/25',
-    scope: 'PaleoIgnition paleoclimate tools; COVID × weather ARIMA modeling',
+    scope: 'PaleoIgnition tools; COVID × weather modeling',
     href: 'https://www.rice.edu/',
     logo: '/logos/rice.png',
     logoAlt: 'Rice University logo',
@@ -62,7 +63,7 @@ export type EducationItem = {
 
 export const education: EducationItem[] = [
   {
-    school: 'University of California, Davis',
+    school: 'UC Davis',
     years: '2025/27',
     line: 'MS Computer Science (AI/ML)',
     href: 'https://www.ucdavis.edu/',
@@ -92,11 +93,11 @@ export const projects: ProjectItem[] = [
   },
   {
     name: 'DeepTimeGuessr',
-    blurb: 'LLaVA model that guesses year & place from images (~42% over humans)',
+    blurb: 'LLaVA model that guesses year & place from images',
   },
   {
     name: 'PaleoIgnition',
-    blurb: 'lightning reconstructions across 21,000 years for classroom use',
+    blurb: 'lightning reconstructions across 21,000 years',
   },
 ];
 

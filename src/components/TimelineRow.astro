@@ -13,11 +13,11 @@ const { name, years, detail, href, logo, logoAlt, showSpine = true } = Astro.pro
 ---
 
 <div class="flex gap-2">
-  <div class="flex shrink-0 flex-col items-center">
+  <div class="flex flex-col items-center shrink-0">
     <img
       src={logo}
       alt={logoAlt}
-      class="h-6 w-6 shrink-0"
+      class="w-6 h-6 shrink-0"
       loading="eager"
       width="24"
       height="24"
@@ -25,7 +25,7 @@ const { name, years, detail, href, logo, logoAlt, showSpine = true } = Astro.pro
     />
     {
       showSpine && (
-        <span class="select-none font-mono leading-tight text-black/40" aria-hidden="true">
+        <span class="font-mono text-black/40 select-none leading-tight" aria-hidden="true">
           |
         </span>
       )
@@ -33,16 +33,21 @@ const { name, years, detail, href, logo, logoAlt, showSpine = true } = Astro.pro
   </div>
   {
     href ? (
-      <a class="grid w-full md:flex md:justify-between" href={href} target="_blank" rel="noopener noreferrer">
-        <p class="whitespace-nowrap font-mono hover:cursor-pointer hover:underline">
+      <a
+        class="grid md:flex md:justify-between w-full"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <p class="font-mono whitespace-nowrap hover:underline hover:cursor-pointer">
           <span class="font-bold">{name}</span>{' '}
           <span class="text-black/40">({years})</span>
         </p>
         <p class="font-mono">{detail}</p>
       </a>
     ) : (
-      <div class="grid w-full md:flex md:justify-between">
-        <p class="whitespace-nowrap font-mono">
+      <div class="grid md:flex md:justify-between w-full">
+        <p class="font-mono whitespace-nowrap">
           <span class="font-bold">{name}</span>{' '}
           <span class="text-black/40">({years})</span>
         </p>

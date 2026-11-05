@@ -12,7 +12,7 @@ const { name, blurb, href } = Astro.props;
   href ? (
     <a class="grid md:flex md:justify-between" href={href} target="_blank" rel="noopener noreferrer">
       <div class="flex space-x-2">
-        <p class="whitespace-nowrap font-mono font-bold hover:cursor-pointer hover:underline">
+        <p class="font-mono font-bold whitespace-nowrap hover:underline hover:cursor-pointer">
           {name}
         </p>
       </div>
@@ -21,7 +21,7 @@ const { name, blurb, href } = Astro.props;
   ) : (
     <div class="grid md:flex md:justify-between">
       <div class="flex space-x-2">
-        <p class="whitespace-nowrap font-mono font-bold">{name}</p>
+        <p class="font-mono font-bold whitespace-nowrap">{name}</p>
       </div>
       <p class="font-mono">{blurb}</p>
     </div>
