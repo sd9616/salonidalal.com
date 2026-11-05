@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/assets';
+
 interface Props {
   name: string;
   years: string;
@@ -12,13 +14,14 @@ interface Props {
 
 const { name, years, detail, href, logo, logoAlt, logoClass = '', showSpine = true } =
   Astro.props;
+const logoSrc = withBase(logo);
 ---
 
 <div class="flex gap-2">
   <div class="flex flex-col items-center shrink-0">
     <div class="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden">
       <img
-        src={logo}
+        src={logoSrc}
         alt={logoAlt}
         class:list={['h-6', 'w-6', 'shrink-0', logoClass]}
         loading="eager"

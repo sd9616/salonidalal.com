@@ -2,6 +2,7 @@
 import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import { site } from '../data/site';
+import { withBase } from '../lib/assets';
 
 interface Props {
   title?: string;
@@ -11,6 +12,9 @@ interface Props {
 const title = Astro.props.title ?? site.name;
 const description = Astro.props.description ?? site.description;
 const canonical = site.url;
+const fontRegular = withBase('/fonts/JetBrainsMono-Regular.woff2');
+const fontBold = withBase('/fonts/JetBrainsMono-Bold.woff2');
+const favicon = withBase('/favicon.svg');
 ---
 
 <!doctype html>
@@ -30,14 +34,24 @@ const canonical = site.url;
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link
-      rel="preload"
-      href="/fonts/JetBrainsMono-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <link rel="icon" type="image/svg+xml" href={favicon} />
+    <link rel="preload" href={fontRegular} as="font" type="font/woff2" crossorigin />
+    <style is:inline set:html={`
+      @font-face {
+        font-family: 'JetBrains Mono';
+        src: url('${fontRegular}') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+      }
+      @font-face {
+        font-family: 'JetBrains Mono';
+        src: url('${fontBold}') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+      }
+    `} />
     <ClientRouter />
   </head>
   <body>
