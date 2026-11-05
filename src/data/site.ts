@@ -48,9 +48,10 @@ export const experience: ExperienceItem[] = [
     years: '2023/25',
     scope: 'PaleoIgnition tools; COVID × weather modeling',
     href: 'https://www.rice.edu/',
-    logo: '/logos/rice.png',
+logo: '/logos/rice.png',
     logoAlt: 'Rice University logo',
-    },
+    logoClass: 'scale-[0.8]',
+  },
 ];
 
 export type EducationItem = {
@@ -77,9 +78,10 @@ export const education: EducationItem[] = [
     years: '2021/25',
     line: 'BS Computer Science',
     href: 'https://www.rice.edu/',
-    logo: '/logos/rice.png',
+logo: '/logos/rice.png',
     logoAlt: 'Rice University logo',
-    },
+    logoClass: 'scale-[0.8]',
+  },
 ];
 
 export type ProjectItem = {
