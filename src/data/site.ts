@@ -21,10 +21,10 @@ export type ExperienceItem = {
 /** Short org labels — Jack-style rows need names that fit on one line */
 export const experience: ExperienceItem[] = [
   {
-    org: 'Cruise',
+    org: 'Cruise [GM]',
     years: '2026',
     scope: 'self-improving agentic systems, eval harnesses',
-    href: 'https://www.getcruise.com/',
+    href: 'https://www.gm.com/',
     logo: '/logos/cruise.png',
     logoAlt: 'Cruise logo',
   },
