@@ -15,6 +15,7 @@ export type ExperienceItem = {
   href?: string;
   logo: string;
   logoAlt: string;
+  logoClass?: string;
 };
 
 /** Short org labels — Jack-style rows need names that fit on one line */
@@ -49,6 +50,7 @@ export const experience: ExperienceItem[] = [
     href: 'https://www.rice.edu/',
     logo: '/logos/rice.png',
     logoAlt: 'Rice University logo',
+    logoClass: 'scale-[1.35]',
   },
 ];
 
@@ -59,6 +61,7 @@ export type EducationItem = {
   href?: string;
   logo: string;
   logoAlt: string;
+  logoClass?: string;
 };
 
 export const education: EducationItem[] = [
@@ -77,6 +80,7 @@ export const education: EducationItem[] = [
     href: 'https://www.rice.edu/',
     logo: '/logos/rice.png',
     logoAlt: 'Rice University logo',
+    logoClass: 'scale-[1.35]',
   },
 ];
 

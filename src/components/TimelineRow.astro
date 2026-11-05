@@ -6,23 +6,27 @@ interface Props {
   href?: string;
   logo: string;
   logoAlt: string;
+  logoClass?: string;
   showSpine?: boolean;
 }
 
-const { name, years, detail, href, logo, logoAlt, showSpine = true } = Astro.props;
+const { name, years, detail, href, logo, logoAlt, logoClass = '', showSpine = true } =
+  Astro.props;
 ---
 
 <div class="flex gap-2">
   <div class="flex flex-col items-center shrink-0">
-    <img
-      src={logo}
-      alt={logoAlt}
-      class="w-6 h-6 shrink-0"
-      loading="eager"
-      width="24"
-      height="24"
-      decoding="async"
-    />
+    <div class="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden">
+      <img
+        src={logo}
+        alt={logoAlt}
+        class:list={['h-6', 'w-6', 'shrink-0', logoClass]}
+        loading="eager"
+        width="24"
+        height="24"
+        decoding="async"
+      />
+    </div>
     {
       showSpine && (
         <span class="font-mono text-black/40 select-none leading-tight" aria-hidden="true">
