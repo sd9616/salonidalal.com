@@ -50,6 +50,7 @@ export const experience: ExperienceItem[] = [
     href: 'https://www.rice.edu/',
     logo: '/logos/rice.png',
     logoAlt: 'Rice University logo',
+    logoClass: 'scale-[0.7]',
   },
 ];
 
@@ -79,6 +80,7 @@ export const education: EducationItem[] = [
     href: 'https://www.rice.edu/',
     logo: '/logos/rice.png',
     logoAlt: 'Rice University logo',
+    logoClass: 'scale-[0.7]',
   },
 ];
 
